@@ -1,0 +1,6 @@
+保存源码
+git add .
+git commit -m ""
+git push
+上传Html
+hexo g -d
