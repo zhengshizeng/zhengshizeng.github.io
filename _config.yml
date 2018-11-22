@@ -5,8 +5,8 @@
 # Site
 title: 郑诗增的学习笔记
 subtitle:
-description: 郑诗增个人学习笔记 C++ OpenCV NodeJS
-keywords:
+description: 个人学习笔记,学得很杂,忘得很快,从一个坑到另一个坑.就是不长记性。把东西记录下来备忘。
+keywords: C++ OpenCV NodeJS 郑诗增笔记
 author: 郑诗增
 language: zh-Hans
 timezone:
@@ -81,3 +81,7 @@ deploy:
   type: git
   repository: https://github.com/zhengshizeng/zhengshizeng.github.io.git
   branch: master
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed
