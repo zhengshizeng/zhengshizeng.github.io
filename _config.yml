@@ -79,9 +79,9 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/zhengshizeng/zhengshizeng.github.io.git
-  branch: master
-
+  repo:
+    coding: https://git.dev.tencent.com/zhengshizeng/zhengshizeng.git,master
+    github: https://github.com/zhengshizeng/zhengshizeng.github.io.git,master
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
