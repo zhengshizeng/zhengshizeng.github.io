@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
 
 # Home page setting
@@ -82,6 +82,12 @@ deploy:
   repo:
     coding: https://git.dev.tencent.com/zhengshizeng/zhengshizeng.git,master
     github: https://github.com/zhengshizeng/zhengshizeng.github.io.git,master
+    gitee: git@gitee.com:zhengshizeng/zhengshizeng.git,master
+
+# deploy:
+#   type: git
+#   repo: git@gitee.com:zhengshizeng/zhengshizeng.git
+#   branch: master
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
