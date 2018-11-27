@@ -66,3 +66,7 @@ LRESULT CCBKVideoCtrlDlg::OnSTUZKZMsg(WPARAM wParam,LPARAM lParam)
 }
 ```
 
+PostMessage到主窗口
+```
+::PostMessage(AfxGetMainWnd()->m_hWnd,WM_CLOSE,0,0);
+```
