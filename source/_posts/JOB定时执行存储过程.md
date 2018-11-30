@@ -2,7 +2,7 @@
 title: JOB定时执行存储过程
 date: 2018-11-03 10:07:33
 tags: [数据库,Oracle] 
-categories: "Oracle"
+categories: "数据库"
 ---
 ### 创建JOB定时执行存储过程
 > [Oracle]使用dbms_job包创建Oracle定时任务   
