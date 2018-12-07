@@ -1,7 +1,7 @@
 ---
 title: ubuntu下nfs安装配置
 date: 2018-11-29 20:00:00
-tags: [nfs,ubuntu,安装] 
+tags: [nfs,ubuntu,install] 
 categories: "Linux"
 ---
 
