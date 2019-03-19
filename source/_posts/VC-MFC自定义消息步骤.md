@@ -70,3 +70,31 @@ PostMessage到主窗口
 ```
 ::PostMessage(AfxGetMainWnd()->m_hWnd,WM_CLOSE,0,0);
 ```
+
+
+## 响应连续消息ON_COMMAND_RANGE
+###### 1. 定义消息
+开始结束是连续的ID
+```
+#define VIDEO_MENU_BASE  WM_USER+100 //开始消息
+...
+#define VIDEO_MENU_END   WM_USER+120 //结束消息
+```
+###### 2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加
+```
+ON_COMMAND_RANGE(VIDEO_MENU_BASE, VIDEO_MENU_END, OnVideoMenu)
+```
+###### 3.OnVideoMenu 响应的函数
+```
+afx_msg void OnVideoMenu(UINT nID);//头文件
+```
+###### 4.函数实现
+```
+void CPlayWnd::OnVideoMenu(UINT nID)
+{
+	switch(nID)
+	{
+	...
+	}
+}
+```
