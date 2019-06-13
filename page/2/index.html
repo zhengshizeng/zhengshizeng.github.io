@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_06注册登录小示例/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_04数据请求---Get/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -299,318 +299,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/08/nodejs_06注册登录小示例/" itemprop="url">06注册登录小示例</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:26:06+08:00">
-                2019-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/08/nodejs_06注册登录小示例/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_06注册登录小示例/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="六-注册登录小示例"><a href="#六-注册登录小示例" class="headerlink" title="六.注册登录小示例"></a>六.注册登录小示例</h5><p>1.接口：<br>注册： /user?act=reg&amp;user=aaa&amp;pass=123456<br>返回JSON {“ok”: false, “msg”: “原因”}   </p>
-<p>登录: /user?act=login&amp;user=aaa&amp;pass=123456   </p>
-<h2 id="返回JSON-“ok”-true-“msg”-“原因”"><a href="#返回JSON-“ok”-true-“msg”-“原因”" class="headerlink" title="返回JSON {“ok”: true, “msg”: “原因”}"></a>返回JSON {“ok”: true, “msg”: “原因”}</h2><h6 id="1-分两部分"><a href="#1-分两部分" class="headerlink" title="1.分两部分"></a>1.分两部分</h6><p><strong>1.1对文件访问：</strong><br><a href="http://localhost:8080/1.html" target="_blank" rel="noopener">http://localhost:8080/1.html</a><br><a href="http://localhost:8080/ajax.js" target="_blank" rel="noopener">http://localhost:8080/ajax.js</a><br><a href="http://localhost:8080/1.jpg" target="_blank" rel="noopener">http://localhost:8080/1.jpg</a>   </p>
-<p><strong>1.2对接口访问：</strong><br><a href="http://localhost:8080/user?act=xx.." target="_blank" rel="noopener">http://localhost:8080/user?act=xx..</a>.<br><a href="http://localhost:8080/news?act=xxx.." target="_blank" rel="noopener">http://localhost:8080/news?act=xxx..</a>.   </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> querystring=<span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">const</span> urlLib=<span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> users=&#123;&#125;;   <span class="comment">//&#123;"blue": "123456", "zhangsan": "123456", "lisi": "321321"&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//解析数据</span></span><br><span class="line">  <span class="keyword">var</span> str=<span class="string">''</span>;</span><br><span class="line">  req.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</span><br><span class="line">    str+=data;</span><br><span class="line">  &#125;);</span><br><span class="line">  req.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj=urlLib.parse(req.url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> url=obj.pathname;</span><br><span class="line">    <span class="keyword">const</span> GET=obj.query;</span><br><span class="line">    <span class="keyword">const</span> POST=querystring.parse(str);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//区分——接口、文件</span></span><br><span class="line">    <span class="keyword">if</span>(url==<span class="string">'/user'</span>)&#123;   <span class="comment">//接口</span></span><br><span class="line">      <span class="keyword">switch</span>(GET.act)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'reg'</span>:</span><br><span class="line">          <span class="comment">//1.检查用户名是否已经有了</span></span><br><span class="line">          <span class="keyword">if</span>(users[GET.user])&#123;</span><br><span class="line">            res.write(<span class="string">'&#123;"ok": false, "msg": "此用户已存在"&#125;'</span>);</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//2.插入users</span></span><br><span class="line">            users[GET.user]=GET.pass;</span><br><span class="line">            res.write(<span class="string">'&#123;"ok": true, "msg": "注册成功"&#125;'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'login'</span>:</span><br><span class="line">          <span class="comment">//1.检查用户是否存在</span></span><br><span class="line">          <span class="keyword">if</span>(users[GET.user]==<span class="literal">null</span>)&#123;</span><br><span class="line">            res.write(<span class="string">'&#123;"ok": false, "msg": "此用户不存在"&#125;'</span>);</span><br><span class="line">          <span class="comment">//2.检查用户密码</span></span><br><span class="line">          &#125;<span class="keyword">else</span> <span class="keyword">if</span>(users[GET.user]!=GET.pass)&#123;</span><br><span class="line">            res.write(<span class="string">'&#123;"ok": false, "msg": "用户名或密码有误"&#125;'</span>);</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            res.write(<span class="string">'&#123;"ok": true, "msg": "登录成功"&#125;'</span>);</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">          res.write(<span class="string">'&#123;"ok": false, "msg": "未知的act"&#125;'</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      res.end();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;              <span class="comment">//文件</span></span><br><span class="line">      <span class="comment">//读取文件</span></span><br><span class="line">      <span class="keyword">var</span> file_name=<span class="string">'./www'</span>+url;</span><br><span class="line">      fs.readFile(file_name, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">          res.write(<span class="string">'404'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          res.write(data);</span><br><span class="line">        &#125;</span><br><span class="line">        res.end();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_05数据请求---post/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑诗增">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/08/nodejs_05数据请求---post/" itemprop="url">05数据请求---post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:26:05+08:00">
-                2019-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/08/nodejs_05数据请求---post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_05数据请求---post/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="五、数据请求-—post"><a href="#五、数据请求-—post" class="headerlink" title="五、数据请求 —post"></a>五、数据请求 —post</h5><h6 id="1-POST数据接收：POST数据比GET大得多"><a href="#1-POST数据接收：POST数据比GET大得多" class="headerlink" title="1.POST数据接收：POST数据比GET大得多"></a>1.POST数据接收：POST数据比GET大得多</h6><p>POST很大——分段<br>data    一段数据<br>end    全部到达<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> querystring=<span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//POST——req</span></span><br><span class="line">  <span class="keyword">var</span> str=<span class="string">''</span>;   <span class="comment">//接收数据</span></span><br><span class="line">  <span class="comment">//data——有一段数据到达(很多次)</span></span><br><span class="line">  <span class="keyword">var</span> i=<span class="number">0</span>;</span><br><span class="line">  req.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`第<span class="subst">$&#123;i++&#125;</span>次收到数据`</span>);</span><br><span class="line">    str+=data;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">//end——数据全部到达(一次)</span></span><br><span class="line">  req.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> POST=querystring.parse(str);</span><br><span class="line">    <span class="built_in">console</span>.log(POST);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure></p>
-<h6 id="2-Get和Post综合、文件请求"><a href="#2-Get和Post综合、文件请求" class="headerlink" title="2.Get和Post综合、文件请求"></a>2.Get和Post综合、文件请求</h6><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">const</span> querystring=<span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">const</span> urlLib=<span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//GET</span></span><br><span class="line">  <span class="keyword">var</span> obj=urlLib.parse(req.url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> <span class="built_in">url</span>=obj.pathname;</span><br><span class="line">  <span class="keyword">const</span> GET=obj.query;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//POST</span></span><br><span class="line">  <span class="keyword">var</span> str=<span class="string">''</span>;</span><br><span class="line">  req.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</span><br><span class="line">    str+=data;</span><br><span class="line">  &#125;);</span><br><span class="line">  req.on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> POST=querystring.parse(str);</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    url——要什么</span></span><br><span class="line"><span class="comment">    GET——get数据</span></span><br><span class="line"><span class="comment">    POST——post数据</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="comment">//文件请求</span></span><br><span class="line">    <span class="keyword">var</span> file_name=<span class="string">'./www'</span>+<span class="built_in">url</span>;</span><br><span class="line">    fs.readFile(file_name, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        res.write(<span class="string">'404'</span>);</span><br><span class="line">      &#125;<span class="title">else</span>&#123;</span><br><span class="line">        res.write(data);</span><br><span class="line">      &#125;</span><br><span class="line">      res.end();</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8081</span>);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_04数据请求 ---Get/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑诗增">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/08/nodejs_04数据请求 ---Get/" itemprop="url">04数据请求 ---Get</a></h1>
+                <a class="post-title-link" href="/2019/06/08/nodejs_04数据请求---Get/" itemprop="url">04数据请求 ---Get</a></h1>
         
 
         <div class="post-meta">
@@ -645,8 +334,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
                   </a>
                 </span>
 
@@ -663,8 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/08/nodejs_04数据请求 ---Get/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_04数据请求 ---Get/" itemprop="commentCount"></span>
+                <a href="/2019/06/08/nodejs_04数据请求---Get/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_04数据请求---Get/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -749,7 +438,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_03文件操作 fs——File System/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_03文件操作 fs---File System/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -768,7 +457,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/08/nodejs_03文件操作 fs——File System/" itemprop="url">03文件操作 fs——File System</a></h1>
+                <a class="post-title-link" href="/2019/06/08/nodejs_03文件操作 fs---File System/" itemprop="url">03文件操作fs---File System</a></h1>
         
 
         <div class="post-meta">
@@ -803,8 +492,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">Nodejs</span>
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
                   </a>
                 </span>
 
@@ -821,8 +510,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/08/nodejs_03文件操作 fs——File System/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_03文件操作 fs——File System/" itemprop="commentCount"></span>
+                <a href="/2019/06/08/nodejs_03文件操作 fs---File System/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_03文件操作 fs---File System/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -855,6 +544,318 @@
             <h5 id="三、文件操作-fs——File-System"><a href="#三、文件操作-fs——File-System" class="headerlink" title="三、文件操作 fs——File System"></a>三、文件操作 fs——File System</h5><h6 id="readFile-文件名-function-err-data"><a href="#readFile-文件名-function-err-data" class="headerlink" title="readFile(文件名, function (err, data){})"></a>readFile(文件名, function (err, data){})</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//readFile(文件名, 回调函数)</span></span><br><span class="line">fs.readFile(<span class="string">'aaa.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'读取失败'</span>);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h6 id="writeFile-文件名-内容-function-err"><a href="#writeFile-文件名-内容-function-err" class="headerlink" title="writeFile(文件名, 内容, function (err){})"></a>writeFile(文件名, 内容, function (err){})</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//writeFile(文件名, 内容, 回调)</span></span><br><span class="line">fs.writeFile(<span class="string">"bbb.txt"</span>, <span class="string">"sdafasdwere"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h6 id="http-fs-简单http服务"><a href="#http-fs-简单http服务" class="headerlink" title="http+fs 简单http服务"></a>http+fs 简单http服务</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//req.url=&gt;'/index.html'</span></span><br><span class="line">  <span class="comment">//读取=&gt;'./www/index.html'</span></span><br><span class="line">  <span class="comment">//  './www'+req.url</span></span><br><span class="line">  <span class="keyword">var</span> file_name=<span class="string">'./www'</span>+req.url;</span><br><span class="line"></span><br><span class="line">  fs.readFile(file_name, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      res.write(<span class="string">'404'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      res.write(data);</span><br><span class="line">    &#125;</span><br><span class="line">    res.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_02nodeJS--简单http服务器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑诗增">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/08/nodejs_02nodeJS--简单http服务器/" itemprop="url">02nodeJS--简单http服务器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:25:02+08:00">
+                2019-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/08/nodejs_02nodeJS--简单http服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_02nodeJS--简单http服务器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="二、nodeJS——-简单http服务器"><a href="#二、nodeJS——-简单http服务器" class="headerlink" title="二、nodeJS—— 简单http服务器"></a>二、nodeJS—— 简单http服务器</h5><p>server.js<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=require(<span class="string">'http'</span>); <span class="comment">//加载http 模块</span></span><br><span class="line"><span class="comment">//request	请求	输入-请求的信息</span></span><br><span class="line"><span class="comment">//response	响应	输出-输出的东西  </span></span><br><span class="line">var server=http.createServer(function (req, res)&#123;</span><br><span class="line">  <span class="built_in">switch</span>(req.url)&#123;</span><br><span class="line">    <span class="built_in">case</span> <span class="string">'/1.html'</span>:</span><br><span class="line">      res.<span class="built_in">write</span>(<span class="string">"111111"</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="built_in">case</span> <span class="string">'/2.html'</span>:</span><br><span class="line">      res.<span class="built_in">write</span>(<span class="string">"2222"</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="built_in">default</span>:</span><br><span class="line">      res.<span class="built_in">write</span>(<span class="string">'404'</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  res.<span class="built_in">end</span>();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//监听</span></span><br><span class="line">server.<span class="built_in">listen</span>(<span class="number">8080</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//http://localhost:8080/</span></span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_01nodejs安装和HelloWorld/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑诗增">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/08/nodejs_01nodejs安装和HelloWorld/" itemprop="url">01nodejs安装和HelloWorld</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:25:01+08:00">
+                2019-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/08/nodejs_01nodejs安装和HelloWorld/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_01nodejs安装和HelloWorld/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="一、-nodejs安装和HelloWorld"><a href="#一、-nodejs安装和HelloWorld" class="headerlink" title="一、 nodejs安装和HelloWorld"></a>一、 nodejs安装和HelloWorld</h4><h5 id="1-官网下载"><a href="#1-官网下载" class="headerlink" title="1.官网下载"></a>1.官网下载</h5><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
+<h5 id="2-下一步下一步安装"><a href="#2-下一步下一步安装" class="headerlink" title="2.下一步下一步安装"></a>2.下一步下一步安装</h5><p>安装完成后 ，命令行 node -v  可以看是否安装完成</p>
+<h5 id="3-运行一个Hello-World"><a href="#3-运行一个Hello-World" class="headerlink" title="3.运行一个Hello World"></a>3.运行一个Hello World</h5><p>新建个 1.js 文件<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.<span class="built_in">log</span>('Hello World!!!');</span><br></pre></td></tr></table></figure></p>
+<p>运行 CMD 到命令行，<figure class="highlight plain"><figcaption><span>1.js```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2.js</span><br></pre></td></tr></table></figure></p>
+<p>var oDate=new Date();<br>console.log(oDate.getFullYear());<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行 CMD 到命令行，``` <span class="keyword">node</span> <span class="title">2</span>.js</span><br></pre></td></tr></table></figure></p>
 
           
         
