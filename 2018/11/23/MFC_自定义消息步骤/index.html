@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="VisualStudio,">
+  <meta name="keywords" content="C++,MFC,">
 
 
 
@@ -81,18 +81,20 @@
 
 
 
-<meta name="description" content="Boost库是一个可移植、提供源代码的C++库，作为标准库的后备，是C++标准化进程的开发引擎之一.">
-<meta name="keywords" content="VisualStudio">
+<meta name="description" content="VC MFC自定义消息步骤 何谓消息、消息处理函数、消息映射？消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。  按照类型，Windows将消息分为：">
+<meta name="keywords" content="C++,MFC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VS2010编译Boost_1_64">
-<meta property="og:url" content="http://yoursite.com/2018/12/05/VS2010编译Boost-1-64/index.html">
+<meta property="og:title" content="MFC_自定义消息步骤">
+<meta property="og:url" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/index.html">
 <meta property="og:site_name" content="学习笔记">
-<meta property="og:description" content="Boost库是一个可移植、提供源代码的C++库，作为标准库的后备，是C++标准化进程的开发引擎之一.">
+<meta property="og:description" content="VC MFC自定义消息步骤 何谓消息、消息处理函数、消息映射？消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。  按照类型，Windows将消息分为：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T08:05:18.593Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/VC-MFC自定义消息步骤/pic.png">
+<meta property="og:updated_time" content="2019-06-17T09:13:50.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VS2010编译Boost_1_64">
-<meta name="twitter:description" content="Boost库是一个可移植、提供源代码的C++库，作为标准库的后备，是C++标准化进程的开发引擎之一.">
+<meta name="twitter:title" content="MFC_自定义消息步骤">
+<meta name="twitter:description" content="VC MFC自定义消息步骤 何谓消息、消息处理函数、消息映射？消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。  按照类型，Windows将消息分为：">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/VC-MFC自定义消息步骤/pic.png">
 
 
 
@@ -122,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/05/VS2010编译Boost-1-64/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/">
 
 
 
 
 
-  <title>VS2010编译Boost_1_64 | 学习笔记</title>
+  <title>MFC_自定义消息步骤 | 学习笔记</title>
   
 
 
@@ -280,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/VS2010编译Boost-1-64/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -297,7 +299,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VS2010编译Boost_1_64</h1>
+          <h1 class="post-title" itemprop="name headline">MFC_自定义消息步骤</h1>
         
 
         <div class="post-meta">
@@ -309,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T09:40:16+08:00">
-                2018-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T10:07:33+08:00">
+                2018-11-23
               </time>
             
 
@@ -332,8 +334,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/make/" itemprop="url" rel="index">
-                    <span itemprop="name">make</span>
+                  <a href="/categories/MFC/" itemprop="url" rel="index">
+                    <span itemprop="name">MFC</span>
                   </a>
                 </span>
 
@@ -350,8 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/05/VS2010编译Boost-1-64/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/05/VS2010编译Boost-1-64/" itemprop="commentCount"></span>
+                <a href="/2018/11/23/MFC_自定义消息步骤/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/23/MFC_自定义消息步骤/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -379,16 +381,21 @@
       
 
       
-        <blockquote>
-<p>Boost库是一个可移植、提供源代码的C++库，作为标准库的后备，是C++标准化进程的开发引擎之一.<br><a id="more"></a></p>
+        <h3 id="VC-MFC自定义消息步骤"><a href="#VC-MFC自定义消息步骤" class="headerlink" title="VC MFC自定义消息步骤"></a>VC MFC自定义消息步骤</h3><blockquote>
+<p>何谓消息、消息处理函数、消息映射？<br>消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。</p>
 </blockquote>
-<h5 id="1-下载BOOST-官网www-boost-org上下载任何版本的都可以。"><a href="#1-下载BOOST-官网www-boost-org上下载任何版本的都可以。" class="headerlink" title="1. 下载BOOST 官网www.boost.org上下载任何版本的都可以。"></a>1. 下载BOOST 官网<a href="http://www.boost.org上下载任何版本的都可以。" target="_blank" rel="noopener">www.boost.org上下载任何版本的都可以。</a></h5><p>这里下载的是boost_1_64_0 版本，解压到某个目录，我解压到了D盘根目录：D:\boost_1_64_0</p>
-<h5 id="2-生成bjam-exe可执行文件，打开2010控制台：开始-所有程序—Microsoft-visual-studio2010——Visual-Studio-Tools——Visual-Studio-2010命令提示"><a href="#2-生成bjam-exe可执行文件，打开2010控制台：开始-所有程序—Microsoft-visual-studio2010——Visual-Studio-Tools——Visual-Studio-2010命令提示" class="headerlink" title="2. 生成bjam.exe可执行文件，打开2010控制台：开始-所有程序—Microsoft visual studio2010——Visual Studio Tools——Visual Studio 2010命令提示"></a>2. 生成bjam.exe可执行文件，打开2010控制台：开始-所有程序—Microsoft visual studio2010——Visual Studio Tools——Visual Studio 2010命令提示</h5><p>进入到到目录D:\boost_1_64_0，运行bootstrap.bat </p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:<span class="string">\Program</span> Files (x86)<span class="string">\Microsoft</span> Visual Studio <span class="number">10.0</span><span class="string">\VC&gt;cd</span> D:<span class="string">\boost_1_64_0</span></span><br><span class="line">D:<span class="string">\boost_1_64_0&gt;bootstrap.bat</span></span><br></pre></td></tr></table></figure>
-<p>这时在目录D:\boost_1_64_0生成了b2.exe、bjam.exe、project-config.jam文件</p>
-<h5 id="3-用bjam-exe编译"><a href="#3-用bjam-exe编译" class="headerlink" title="3. 用bjam.exe编译"></a>3. 用bjam.exe编译</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">D:\boost_1_64_0&gt;bjam <span class="attribute">--toolset</span>=msvc-10.0 <span class="attribute">--build-type</span>=complete --without-python</span><br><span class="line"><span class="attribute">--prefix</span>=<span class="string">"D:\boost_1_64_0\bin\vc10"</span> <span class="attribute">link</span>=static <span class="attribute">runtime-link</span>=shared <span class="attribute">threading</span>=mu</span><br><span class="line">lti <span class="builtin-name">debug</span> release install</span><br><span class="line"></span><br><span class="line">bjam stage --without-python <span class="attribute">--toolset</span>=msvc-14.0 <span class="attribute">--build-type</span>=complete <span class="attribute">--stagedir</span>=<span class="string">"D:\boost_1_64_0\bin\vc10"</span>  <span class="attribute">link</span>=static <span class="attribute">runtime-link</span>=shared <span class="attribute">threading</span>=multi <span class="builtin-name">debug</span> release</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">D:\boost_1_64_0&gt;bjam stage <span class="attribute">--toolset</span>=msvc-14.0 <span class="attribute">--build-type</span>=complete --stagedir=</span><br><span class="line"><span class="string">"D:\boost_1_64_0\bin\vc14"</span>  <span class="attribute">link</span>=static <span class="attribute">runtime-link</span>=static <span class="attribute">threading</span>=multi debu</span><br><span class="line">g release</span><br><span class="line"></span><br><span class="line">bjam <span class="attribute">--toolset</span>=msvc-14.1 <span class="attribute">--build-type</span>=complete --without-python <span class="attribute">--prefix</span>=<span class="string">"D:\boost_1_64_0\bin\vc141"</span> <span class="attribute">link</span>=static <span class="attribute">runtime-link</span>=shared <span class="attribute">threading</span>=multi <span class="builtin-name">debug</span> release install</span><br></pre></td></tr></table></figure>
-<p>install 表示会生成包含头文件的include目录,stage表示只生成库（dll和lib）<br>without/with表示不编译/编译哪些库<br>toolset指定编译器，VS2010用msvc-10.0<br>prefix,表示编译生成文件的路径。使用install用prefix,使用stage时用stagedir<br>link指定生成动态链接库或静态链接库。生成动态链接库需使用shared方式，生成静态链接库需使用static方式。<br>runtime-link，动态/静态链接C/C++运行时库。有shared和static两种方式，这样runtime-link和link一共可以产生4种组合方式。<br>threading，单/多线程编译。<br>debug/release，编译debug/release版本。一般都是程序的debug版本对应库的debug版本，所以两个都编译。   </p>
-<p>差不多需要一小时，编译完成（中间会有警告）<br>编译好后，在根目录会有个bin.v2文件夹，是编译过程中的临时文件夹，很大，可以手动删除。   </p>
+<h5 id="按照类型，Windows将消息分为："><a href="#按照类型，Windows将消息分为：" class="headerlink" title="按照类型，Windows将消息分为："></a>按照类型，Windows将消息分为：</h5><p><img src="VC-MFC自定义消息步骤/pic.png" alt="图片测试"><br><a id="more"></a><br>graph LR<br>消息类型–&gt;系统定义消息<br>消息类型–&gt;程序定义消息<br>系统定义消息–&gt;窗口消息<br>系统定义消息–&gt;命令消息<br>系统定义消息–&gt;控件消息<br>程序定义消息–&gt;WM_USER<br>窗口消息–&gt;WM_CREATE/WM_MOUSEMOVE等<br>命令消息–&gt;WM_COMMAND<br>控件消息–&gt;WM_COMMAND/WM_NOTIFY</p>
+<h5 id="1-头文件加"><a href="#1-头文件加" class="headerlink" title="1. 头文件加"></a>1. 头文件加</h5><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">afx_msg LRESULT OnMyMsg(<span class="keyword">WPARAM</span> <span class="keyword">wParam</span>,<span class="keyword">LPARAM</span> <span class="keyword">lParam</span>)<span class="comment">;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WM_MY_MSG WM_USER+<span class="number">100</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加"><a href="#2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加" class="headerlink" title="2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加"></a>2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ON_MESSAGE</span><span class="params">(WM_MY_MSG,OnMyMsg)</span></span></span><br></pre></td></tr></table></figure>
+<h5 id="3-CPP文件实现"><a href="#3-CPP文件实现" class="headerlink" title="3. CPP文件实现"></a>3. CPP文件实现</h5><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LRESULT CMy10Thread_CreateDlg::OnMyMsg(<span class="keyword">WPARAM</span> <span class="keyword">wParam</span>, <span class="keyword">LPARAM</span> <span class="keyword">lParam</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="4-发送消息"><a href="#4-发送消息" class="headerlink" title="4. 发送消息"></a>4. 发送消息</h5><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">::PostMessage</span>(<span class="name">AfxGetMainWnd</span>()-&gt;m_hWnd,WM_MY_MSG,i,<span class="number">0</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<h5 id="5-强制类型转-wParam-的消息"><a href="#5-强制类型转-wParam-的消息" class="headerlink" title="5. 强制类型转 wParam 的消息"></a>5. 强制类型转 wParam 的消息</h5><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CString <span class="built_in">str</span>;  </span><br><span class="line"><span class="built_in">str</span>.<span class="built_in">Format</span>(<span class="string">"%d"</span>,wParam);</span><br></pre></td></tr></table></figure>
+<h5 id="6-POST-CString-数据"><a href="#6-POST-CString-数据" class="headerlink" title="6. POST CString 数据"></a>6. POST CString 数据</h5><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">CString s_zkzm;</span><br><span class="line">s_zkzm.Format(<span class="string">"123456789123456789"</span>);</span><br><span class="line">::PostMessage<span class="function"><span class="params">(AfxGetMainWnd()-&gt;m_hWnd,WM_STUZKZ_MSG,<span class="number">0</span>,LPARAM(<span class="keyword">new</span> CString(s_zkzm)))</span>;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">//接收</span></span><br><span class="line"><span class="function"><span class="title">LRESULT</span> <span class="title">CCBKVideoCtrlDlg</span>::<span class="title">OnSTUZKZMsg</span><span class="params">(WPARAM wParam,LPARAM lParam)</span></span></span><br><span class="line"><span class="function">&#123;</span></span><br><span class="line"><span class="function">	<span class="title">CString</span> *<span class="title">pmsg</span>=<span class="params">(CString *)</span><span class="title">lParam</span>;</span></span><br><span class="line"><span class="function">	<span class="title">CString</span> <span class="title">temp</span>=*<span class="title">pmsg</span>;</span></span><br><span class="line"><span class="function">//	<span class="title">MessageBox</span><span class="params">(temp)</span>;</span></span><br><span class="line"><span class="function">//	<span class="title">tcpsock</span>.<span class="title">SendString</span><span class="params">(,MSG_START,temp)</span>;</span></span><br><span class="line"><span class="function">	<span class="title">delete</span> <span class="title">pmsg</span>;</span></span><br><span class="line"><span class="function">	<span class="title">return</span> 0;</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>PostMessage到主窗口<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">::PostMessage</span>(<span class="name">AfxGetMainWnd</span>()-&gt;m_hWnd,WM_CLOSE,<span class="number">0</span>,<span class="number">0</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="响应连续消息ON-COMMAND-RANGE"><a href="#响应连续消息ON-COMMAND-RANGE" class="headerlink" title="响应连续消息ON_COMMAND_RANGE"></a>响应连续消息ON_COMMAND_RANGE</h2><h6 id="1-定义消息"><a href="#1-定义消息" class="headerlink" title="1. 定义消息"></a>1. 定义消息</h6><p>开始结束是连续的ID<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VIDEO_MENU_BASE  WM_USER+100 <span class="comment">//开始消息</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> VIDEO_MENU_END   WM_USER+120 <span class="comment">//结束消息</span></span></span><br></pre></td></tr></table></figure></p>
+<h6 id="2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加-1"><a href="#2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加-1" class="headerlink" title="2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加"></a>2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加</h6><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ON_COMMAND_RANGE</span><span class="params">(VIDEO_MENU_BASE, VIDEO_MENU_END, OnVideoMenu)</span></span></span><br></pre></td></tr></table></figure>
+<h6 id="3-OnVideoMenu-响应的函数"><a href="#3-OnVideoMenu-响应的函数" class="headerlink" title="3.OnVideoMenu 响应的函数"></a>3.OnVideoMenu 响应的函数</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">afx_msg <span class="keyword">void</span> <span class="title">OnVideoMenu</span><span class="params">(UINT nID)</span></span>;<span class="comment">//头文件</span></span><br></pre></td></tr></table></figure>
+<h6 id="4-函数实现"><a href="#4-函数实现" class="headerlink" title="4.函数实现"></a>4.函数实现</h6><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> CPlayWnd::OnVideoMenu(UINT nID)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">switch</span>(nID)</span><br><span class="line">	&#123;</span><br><span class="line">	...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -451,7 +458,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/VisualStudio/" rel="tag"># VisualStudio</a>
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+            <a href="/tags/MFC/" rel="tag"># MFC</a>
           
         </div>
       
@@ -464,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/05/安装VS2017的正确姿势/" rel="next" title="安装VS2017的正确姿势">
-                <i class="fa fa-chevron-left"></i> 安装VS2017的正确姿势
+              <a href="/2018/11/03/JOB定时执行存储过程/" rel="next" title="JOB定时执行存储过程">
+                <i class="fa fa-chevron-left"></i> JOB定时执行存储过程
               </a>
             
           </div>
@@ -474,8 +483,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/08/nodejs_01nodejs安装和HelloWorld/" rel="prev" title="01nodejs安装和HelloWorld">
-                01nodejs安装和HelloWorld <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/25/Git安装和简单使用/" rel="prev" title="Git安装和简单使用">
+                Git安装和简单使用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -572,7 +581,7 @@ var jiathis_config={
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">郑诗增</p>
-              <p class="site-description motion-element" itemprop="description">个人学习笔记,理论上都是正确的,实际上也都是正确的,如果有误一定是你打开方式不正确.</p>
+              <p class="site-description motion-element" itemprop="description">个人学习笔记,好记性不如烂笔头.</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -644,7 +653,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-下载BOOST-官网www-boost-org上下载任何版本的都可以。"><span class="nav-number">1.</span> <span class="nav-text">1. 下载BOOST 官网www.boost.org上下载任何版本的都可以。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-生成bjam-exe可执行文件，打开2010控制台：开始-所有程序—Microsoft-visual-studio2010——Visual-Studio-Tools——Visual-Studio-2010命令提示"><span class="nav-number">2.</span> <span class="nav-text">2. 生成bjam.exe可执行文件，打开2010控制台：开始-所有程序—Microsoft visual studio2010——Visual Studio Tools——Visual Studio 2010命令提示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-用bjam-exe编译"><span class="nav-number">3.</span> <span class="nav-text">3. 用bjam.exe编译</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#VC-MFC自定义消息步骤"><span class="nav-number">1.</span> <span class="nav-text">VC MFC自定义消息步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#按照类型，Windows将消息分为："><span class="nav-number">1.0.1.</span> <span class="nav-text">按照类型，Windows将消息分为：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-头文件加"><span class="nav-number">1.0.2.</span> <span class="nav-text">1. 头文件加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加"><span class="nav-number">1.0.3.</span> <span class="nav-text">2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-CPP文件实现"><span class="nav-number">1.0.4.</span> <span class="nav-text">3. CPP文件实现</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-发送消息"><span class="nav-number">1.0.5.</span> <span class="nav-text">4. 发送消息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-强制类型转-wParam-的消息"><span class="nav-number">1.0.6.</span> <span class="nav-text">5. 强制类型转 wParam 的消息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-POST-CString-数据"><span class="nav-number">1.0.7.</span> <span class="nav-text">6. POST CString 数据</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#响应连续消息ON-COMMAND-RANGE"><span class="nav-number"></span> <span class="nav-text">响应连续消息ON_COMMAND_RANGE</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-定义消息"><span class="nav-number">0.0.0.1.</span> <span class="nav-text">1. 定义消息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加-1"><span class="nav-number">0.0.0.2.</span> <span class="nav-text">2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-OnVideoMenu-响应的函数"><span class="nav-number">0.0.0.3.</span> <span class="nav-text">3.OnVideoMenu 响应的函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-函数实现"><span class="nav-number">0.0.0.4.</span> <span class="nav-text">4.函数实现</span></a></li></ol></li></div>
             
 
           </div>
