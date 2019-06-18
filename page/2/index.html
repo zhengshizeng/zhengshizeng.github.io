@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_04数据请求---Get/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/ubuntu_下nfs安装配置/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -299,7 +299,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/06/08/nodejs_04数据请求---Get/" itemprop="url">04数据请求 ---Get</a></h1>
+                <a class="post-title-link" href="/2018/11/29/ubuntu_下nfs安装配置/" itemprop="url">ubuntu下nfs安装配置</a></h1>
         
 
         <div class="post-meta">
@@ -311,8 +311,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:26:04+08:00">
-                2019-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T20:00:00+08:00">
+                2018-11-29
               </time>
             
 
@@ -334,8 +334,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -352,634 +352,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/08/nodejs_04数据请求---Get/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_04数据请求---Get/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="四、数据请求-—Get"><a href="#四、数据请求-—Get" class="headerlink" title="四、数据请求 —Get"></a>四、数据请求 —Get</h5><p>前台-&gt;form、ajax、jsonp 等<br>后台-&gt;一样  都是 http请求<br><strong>请求方式</strong>：<br>1.GET        数据在url中<br>2.POST        数据不在url中   </p>
-<h2 id="……"><a href="#……" class="headerlink" title="……"></a>……</h2><p>from.html<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://localhost:8080/aaa"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line">      用户：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      密码：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h6 id="GET数据解析"><a href="#GET数据解析" class="headerlink" title="GET数据解析"></a>GET数据解析</h6><p>1.自己切<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> GET=&#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span>(req.url.indexOf(<span class="string">'?'</span>)!=<span class="number">-1</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> arr=req.url.split(<span class="string">'?'</span>);</span><br><span class="line">    <span class="comment">//arr[0]=&gt;地址  '/aaa'</span></span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">url</span>=arr[<span class="number">0</span>];</span><br><span class="line">    <span class="comment">//arr[1]=&gt;数据  'user=blue&amp;pass=123456'</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr2=arr[<span class="number">1</span>].split(<span class="string">'&amp;'</span>);</span><br><span class="line">    <span class="comment">//arr2=&gt;['user=blue', 'pass=123456']</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr2.length;i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> arr3=arr2[i].split(<span class="string">'='</span>);</span><br><span class="line">      <span class="comment">//arr3[0]=&gt;名字   'user'</span></span><br><span class="line">      <span class="comment">//arr3[1]=&gt;数据   'blue'</span></span><br><span class="line">      GET[arr3[<span class="number">0</span>]]=arr3[<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;<span class="title">else</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">url</span>=req.url;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">url</span>, GET);</span><br><span class="line">  <span class="comment">//req获取前台请求数据</span></span><br><span class="line">  res.write(<span class="string">'aaa'</span>);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure></p>
-<p>2.querystring<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> querystring=<span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> GET=&#123;&#125;;</span><br><span class="line">  <span class="keyword">if</span>(req.url.indexOf(<span class="string">'?'</span>)!=<span class="number">-1</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> arr=req.url.split(<span class="string">'?'</span>);</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">url</span>=arr[<span class="number">0</span>];</span><br><span class="line">    </span><br><span class="line">    GET=querystring.parse(arr[<span class="number">1</span>]);</span><br><span class="line">  &#125;<span class="title">else</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">url</span>=req.url;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">url</span>, GET);</span><br><span class="line">  <span class="comment">//req获取前台请求数据</span></span><br><span class="line">  res.write(<span class="string">'aaa'</span>);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure></p>
-<p>3.urlLib<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> urlLib=<span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj=urlLib.parse(req.url, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> <span class="built_in">url</span>=obj.pathname;</span><br><span class="line">  <span class="keyword">var</span> GET=obj.query;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">url</span>, GET);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//req获取前台请求数据</span></span><br><span class="line">  res.write(<span class="string">'aaa'</span>);</span><br><span class="line">  res.end();</span><br><span class="line">&#125;).listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_03文件操作 fs---File System/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑诗增">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/08/nodejs_03文件操作 fs---File System/" itemprop="url">03文件操作fs---File System</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:26:03+08:00">
-                2019-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/08/nodejs_03文件操作 fs---File System/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_03文件操作 fs---File System/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="三、文件操作-fs——File-System"><a href="#三、文件操作-fs——File-System" class="headerlink" title="三、文件操作 fs——File System"></a>三、文件操作 fs——File System</h5><h6 id="readFile-文件名-function-err-data"><a href="#readFile-文件名-function-err-data" class="headerlink" title="readFile(文件名, function (err, data){})"></a>readFile(文件名, function (err, data){})</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//readFile(文件名, 回调函数)</span></span><br><span class="line">fs.readFile(<span class="string">'aaa.txt'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'读取失败'</span>);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data.toString());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h6 id="writeFile-文件名-内容-function-err"><a href="#writeFile-文件名-内容-function-err" class="headerlink" title="writeFile(文件名, 内容, function (err){})"></a>writeFile(文件名, 内容, function (err){})</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//writeFile(文件名, 内容, 回调)</span></span><br><span class="line">fs.writeFile(<span class="string">"bbb.txt"</span>, <span class="string">"sdafasdwere"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h6 id="http-fs-简单http服务"><a href="#http-fs-简单http服务" class="headerlink" title="http+fs 简单http服务"></a>http+fs 简单http服务</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=<span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> fs=<span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">  <span class="comment">//req.url=&gt;'/index.html'</span></span><br><span class="line">  <span class="comment">//读取=&gt;'./www/index.html'</span></span><br><span class="line">  <span class="comment">//  './www'+req.url</span></span><br><span class="line">  <span class="keyword">var</span> file_name=<span class="string">'./www'</span>+req.url;</span><br><span class="line"></span><br><span class="line">  fs.readFile(file_name, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">      res.write(<span class="string">'404'</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      res.write(data);</span><br><span class="line">    &#125;</span><br><span class="line">    res.end();</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">8080</span>);</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_02nodeJS--简单http服务器/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑诗增">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/08/nodejs_02nodeJS--简单http服务器/" itemprop="url">02nodeJS--简单http服务器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:25:02+08:00">
-                2019-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/08/nodejs_02nodeJS--简单http服务器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_02nodeJS--简单http服务器/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="二、nodeJS——-简单http服务器"><a href="#二、nodeJS——-简单http服务器" class="headerlink" title="二、nodeJS—— 简单http服务器"></a>二、nodeJS—— 简单http服务器</h5><p>server.js<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http=require(<span class="string">'http'</span>); <span class="comment">//加载http 模块</span></span><br><span class="line"><span class="comment">//request	请求	输入-请求的信息</span></span><br><span class="line"><span class="comment">//response	响应	输出-输出的东西  </span></span><br><span class="line">var server=http.createServer(function (req, res)&#123;</span><br><span class="line">  <span class="built_in">switch</span>(req.url)&#123;</span><br><span class="line">    <span class="built_in">case</span> <span class="string">'/1.html'</span>:</span><br><span class="line">      res.<span class="built_in">write</span>(<span class="string">"111111"</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="built_in">case</span> <span class="string">'/2.html'</span>:</span><br><span class="line">      res.<span class="built_in">write</span>(<span class="string">"2222"</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">    <span class="built_in">default</span>:</span><br><span class="line">      res.<span class="built_in">write</span>(<span class="string">'404'</span>);</span><br><span class="line">      <span class="built_in">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  res.<span class="built_in">end</span>();</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//监听</span></span><br><span class="line">server.<span class="built_in">listen</span>(<span class="number">8080</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//http://localhost:8080/</span></span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/08/nodejs_01nodejs安装和HelloWorld/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑诗增">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/08/nodejs_01nodejs安装和HelloWorld/" itemprop="url">01nodejs安装和HelloWorld</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T06:25:01+08:00">
-                2019-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/nodejs/" itemprop="url" rel="index">
-                    <span itemprop="name">nodejs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/06/08/nodejs_01nodejs安装和HelloWorld/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/08/nodejs_01nodejs安装和HelloWorld/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="一、-nodejs安装和HelloWorld"><a href="#一、-nodejs安装和HelloWorld" class="headerlink" title="一、 nodejs安装和HelloWorld"></a>一、 nodejs安装和HelloWorld</h4><h5 id="1-官网下载"><a href="#1-官网下载" class="headerlink" title="1.官网下载"></a>1.官网下载</h5><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a></p>
-<h5 id="2-下一步下一步安装"><a href="#2-下一步下一步安装" class="headerlink" title="2.下一步下一步安装"></a>2.下一步下一步安装</h5><p>安装完成后 ，命令行 node -v  可以看是否安装完成</p>
-<h5 id="3-运行一个Hello-World"><a href="#3-运行一个Hello-World" class="headerlink" title="3.运行一个Hello World"></a>3.运行一个Hello World</h5><p>新建个 1.js 文件<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.<span class="built_in">log</span>('Hello World!!!');</span><br></pre></td></tr></table></figure></p>
-<p>运行 CMD 到命令行，<figure class="highlight plain"><figcaption><span>1.js```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2.js</span><br></pre></td></tr></table></figure></p>
-<p>var oDate=new Date();<br>console.log(oDate.getFullYear());<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行 CMD 到命令行，``` <span class="keyword">node</span> <span class="title">2</span>.js</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-    
-    </div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/VS2010_编译Boost-1-64/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="郑诗增">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学习笔记">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/05/VS2010_编译Boost-1-64/" itemprop="url">VS2010_编译Boost_1_64</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T09:40:16+08:00">
-                2018-12-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/make/" itemprop="url" rel="index">
-                    <span itemprop="name">make</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/05/VS2010_编译Boost-1-64/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/05/VS2010_编译Boost-1-64/" itemprop="commentCount"></span>
+                <a href="/2018/11/29/ubuntu_下nfs安装配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/29/ubuntu_下nfs安装配置/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1009,10 +383,12 @@
       
         
           <blockquote>
-<p>Boost库是一个可移植、提供源代码的C++库，作为标准库的后备，是C++标准化进程的开发引擎之一.<br></p></blockquote>
+<p>NFS（Network File System）即网络文件系统，是FreeBSD支持的文件系统中的一种，它允许网络中的计算机之间通过TCP/IP网络共享资源。在NFS的应用中，本地NFS的客户端应用可以像访问本地文件一样透明地读写位于远端NFS服务器上的文件。</p>
+</blockquote>
+<hr>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/05/VS2010_编译Boost-1-64/#more" rel="contents">
+            <a class="btn" href="/2018/11/29/ubuntu_下nfs安装配置/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1065,7 +441,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/安装VS2017的正确姿势/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/ubuntu_编译ffmpeg/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -1084,7 +460,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/05/安装VS2017的正确姿势/" itemprop="url">安装VS2017的正确姿势</a></h1>
+                <a class="post-title-link" href="/2018/11/28/ubuntu_编译ffmpeg/" itemprop="url">ubuntu编译ffmpeg</a></h1>
         
 
         <div class="post-meta">
@@ -1096,8 +472,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T06:27:41+08:00">
-                2018-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T06:19:02+08:00">
+                2018-11-28
               </time>
             
 
@@ -1119,8 +495,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/install/" itemprop="url" rel="index">
-                    <span itemprop="name">install</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -1137,8 +513,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/05/安装VS2017的正确姿势/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/05/安装VS2017的正确姿势/" itemprop="commentCount"></span>
+                <a href="/2018/11/28/ubuntu_编译ffmpeg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/28/ubuntu_编译ffmpeg/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1168,10 +544,10 @@
       
         
           <blockquote>
-<p>VS2017 默认安装在C盘,太占空间了,下载离线安装包到其它盘<br></p></blockquote>
+<p>ffmpeg 源码编译<br></p></blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/05/安装VS2017的正确姿势/#more" rel="contents">
+            <a class="btn" href="/2018/11/28/ubuntu_编译ffmpeg/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1224,7 +600,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/error_C2275将此类型用作表达式非法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/25/Git_安装和简单使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -1243,7 +619,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/03/error_C2275将此类型用作表达式非法/" itemprop="url">error C2275“XXXX” 将此类型用作表达式非法</a></h1>
+                <a class="post-title-link" href="/2018/11/25/Git_安装和简单使用/" itemprop="url">Git安装和简单使用</a></h1>
         
 
         <div class="post-meta">
@@ -1255,8 +631,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T15:24:30+08:00">
-                2018-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T15:22:18+08:00">
+                2018-11-25
               </time>
             
 
@@ -1278,8 +654,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/error/" itemprop="url" rel="index">
-                    <span itemprop="name">error</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -1296,8 +672,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/03/error_C2275将此类型用作表达式非法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/03/error_C2275将此类型用作表达式非法/" itemprop="commentCount"></span>
+                <a href="/2018/11/25/Git_安装和简单使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/25/Git_安装和简单使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1326,11 +702,11 @@
 
       
         
-          <blockquote>
-<p>将C代码在VC++中编译，经常会出现error C2275错误.<br></p></blockquote>
+          <h4 id="在Windows上安装Git"><a href="#在Windows上安装Git" class="headerlink" title="在Windows上安装Git"></a>在Windows上安装Git</h4><p>在Windows上使用Git，可以从<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git官网</a>直接下载安装程序，然后按默认选项安装即可。<br>安装完成后，在开始菜单里找到“Git”-&gt;“Git Bash”，蹦出一个类似命令行窗口的东西，就说明Git安装成功！</p>
+<p>安装完成后，还需要最后一步设置，在命令行输入：<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/03/error_C2275将此类型用作表达式非法/#more" rel="contents">
+            <a class="btn" href="/2018/11/25/Git_安装和简单使用/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1383,7 +759,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/error_解决Navicat连接MySQL总是报错1251的方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -1402,7 +778,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/03/error_解决Navicat连接MySQL总是报错1251的方法/" itemprop="url">解决Navicat连接MySQL总是报错1251的方法</a></h1>
+                <a class="post-title-link" href="/2018/11/23/MFC_自定义消息步骤/" itemprop="url">MFC_自定义消息步骤</a></h1>
         
 
         <div class="post-meta">
@@ -1414,8 +790,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T15:20:02+08:00">
-                2018-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T10:07:33+08:00">
+                2018-11-23
               </time>
             
 
@@ -1437,8 +813,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/error/" itemprop="url" rel="index">
-                    <span itemprop="name">error</span>
+                  <a href="/categories/MFC/" itemprop="url" rel="index">
+                    <span itemprop="name">MFC</span>
                   </a>
                 </span>
 
@@ -1455,8 +831,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/03/error_解决Navicat连接MySQL总是报错1251的方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/03/error_解决Navicat连接MySQL总是报错1251的方法/" itemprop="commentCount"></span>
+                <a href="/2018/11/23/MFC_自定义消息步骤/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/23/MFC_自定义消息步骤/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1485,11 +861,13 @@
 
       
         
-          <blockquote>
-<p>Navicat连接不上，总是报错1251;<br>原因是MySQL8.0版本的加密方式和MySQL5.0的不一样，连接会报错.<br></p></blockquote>
+          <h3 id="VC-MFC自定义消息步骤"><a href="#VC-MFC自定义消息步骤" class="headerlink" title="VC MFC自定义消息步骤"></a>VC MFC自定义消息步骤</h3><blockquote>
+<p>何谓消息、消息处理函数、消息映射？<br>消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。</p>
+</blockquote>
+<h5 id="按照类型，Windows将消息分为："><a href="#按照类型，Windows将消息分为：" class="headerlink" title="按照类型，Windows将消息分为："></a>按照类型，Windows将消息分为：</h5><p><img src="/2018/11/23/MFC_自定义消息步骤/pic.png" alt="图片测试"><br></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/03/error_解决Navicat连接MySQL总是报错1251的方法/#more" rel="contents">
+            <a class="btn" href="/2018/11/23/MFC_自定义消息步骤/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1542,7 +920,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/Win命令行下关闭某端口被占用程序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/JOB定时执行存储过程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -1561,7 +939,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/03/Win命令行下关闭某端口被占用程序/" itemprop="url">Win命令行下关闭某端口被占用程序</a></h1>
+                <a class="post-title-link" href="/2018/11/03/JOB定时执行存储过程/" itemprop="url">JOB定时执行存储过程</a></h1>
         
 
         <div class="post-meta">
@@ -1573,8 +951,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T15:15:37+08:00">
-                2018-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T10:07:33+08:00">
+                2018-11-03
               </time>
             
 
@@ -1596,8 +974,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/cmd/" itemprop="url" rel="index">
-                    <span itemprop="name">cmd</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -1614,8 +992,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/03/Win命令行下关闭某端口被占用程序/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/03/Win命令行下关闭某端口被占用程序/" itemprop="commentCount"></span>
+                <a href="/2018/11/03/JOB定时执行存储过程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/JOB定时执行存储过程/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1644,11 +1022,11 @@
 
       
         
-          <blockquote>
-<p>Netstat是控制台命令,是一个监控TCP/IP网络的非常有用的工具。<br></p></blockquote>
+          <h3 id="创建JOB定时执行存储过程"><a href="#创建JOB定时执行存储过程" class="headerlink" title="创建JOB定时执行存储过程"></a>创建JOB定时执行存储过程</h3><blockquote>
+<p>[Oracle]使用dbms_job包创建Oracle定时任务<br> 在Oracle的包里面，有一个名字叫做DBMS_JOB的包，它的作用是安排和管理作业队列。<br></p></blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/03/Win命令行下关闭某端口被占用程序/#more" rel="contents">
+            <a class="btn" href="/2018/11/03/JOB定时执行存储过程/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1701,7 +1079,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/03/VS2010_问题_LINK文件无效或损坏/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/数据库游标的使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -1720,7 +1098,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/12/03/VS2010_问题_LINK文件无效或损坏/" itemprop="url">VS2010_问题_LINK fatal error LNK1123 转换到 COFF 期间失败 文件无效或损坏</a></h1>
+                <a class="post-title-link" href="/2018/11/03/数据库游标的使用/" itemprop="url">数据库游标的使用</a></h1>
         
 
         <div class="post-meta">
@@ -1732,8 +1110,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T06:26:39+08:00">
-                2018-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T09:37:01+08:00">
+                2018-11-03
               </time>
             
 
@@ -1755,8 +1133,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/error/" itemprop="url" rel="index">
-                    <span itemprop="name">error</span>
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -1773,8 +1151,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/03/VS2010_问题_LINK文件无效或损坏/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/03/VS2010_问题_LINK文件无效或损坏/" itemprop="commentCount"></span>
+                <a href="/2018/11/03/数据库游标的使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/数据库游标的使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1804,10 +1182,659 @@
       
         
           <blockquote>
-<p>LINK : fatal error LNK1123: 转换到 COFF 期间失败: 文件无效或损坏<br></p></blockquote>
+</blockquote>
+<h2 id="SQLServer数据库游标"><a href="#SQLServer数据库游标" class="headerlink" title="SQLServer数据库游标"></a>SQLServer数据库游标</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/12/03/VS2010_问题_LINK文件无效或损坏/#more" rel="contents">
+            <a class="btn" href="/2018/11/03/数据库游标的使用/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/std_setw(size)与std_setfill(char)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑诗增">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/03/std_setw(size)与std_setfill(char)/" itemprop="url">std_setw(size)与std_setfill(char)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T09:36:54+08:00">
+                2018-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/03/std_setw(size)与std_setfill(char)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/std_setw(size)与std_setfill(char)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>std::setw(size)与 std::setfill(char)</p>
+</blockquote>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能:"></a>功能:</h4><p>std::setw ：需要填充多少个字符,默认填充的字符为’ ‘空格<br>std::setfill：设置 std::setw 将填充什么样的字符,如:std::setfill(‘*‘)   </p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/03/std_setw(size)与std_setfill(char)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/VS中如何统计整个项目的代码行数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑诗增">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/03/VS中如何统计整个项目的代码行数/" itemprop="url">VS中如何统计整个项目的代码行数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T09:36:53+08:00">
+                2018-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/MFC/" itemprop="url" rel="index">
+                    <span itemprop="name">MFC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/03/VS中如何统计整个项目的代码行数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/VS中如何统计整个项目的代码行数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<h4 id="VS-中如何统计整个项目的代码行数"><a href="#VS-中如何统计整个项目的代码行数" class="headerlink" title="VS 中如何统计整个项目的代码行数"></a>VS 中如何统计整个项目的代码行数</h4></blockquote>
+<blockquote>
+<ol>
+<li>vs编辑 | 查找和替换 | 在文件中查找</li>
+<li>查找选项选 选择正则表达式</li>
+<li>^b<em>[^:b#/]+.</em>$</li>
+</ol>
+</blockquote>
+<p>Ctrl + Shift + F 打开查找替换窗口<br>输入如下内容，查找选项选 选择正则表达式<br>查找全部</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^b*[^<span class="symbol">:b</span><span class="comment">#/]+.*$</span></span><br></pre></td></tr></table></figure>
+<p>结果在查找结果的最后一行</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/设置注册表使程序开机自启动/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑诗增">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/03/设置注册表使程序开机自启动/" itemprop="url">设置注册表使程序开机自启动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T09:36:52+08:00">
+                2018-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/MFC/" itemprop="url" rel="index">
+                    <span itemprop="name">MFC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/03/设置注册表使程序开机自启动/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/设置注册表使程序开机自启动/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>设置注册表使程序开机自启动<br>比较简单的做个注册表的设置<br></p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/03/设置注册表使程序开机自启动/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+    <div>
+    
+    </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/MFC_设置系统分辨率/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="郑诗增">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学习笔记">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/03/MFC_设置系统分辨率/" itemprop="url">MFC_设置系统分辨率</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-03T09:36:51+08:00">
+                2018-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/MFC/" itemprop="url" rel="index">
+                    <span itemprop="name">MFC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/03/MFC_设置系统分辨率/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/MFC_设置系统分辨率/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>在一些应用实例中，我们需要全屏显示程序，自适应的去调整控件的大小和位置有时候不太美观。</p>
+</blockquote>
+<h2 id="一个简单的方法，设置系统分辨率来完成全屏的显示。"><a href="#一个简单的方法，设置系统分辨率来完成全屏的显示。" class="headerlink" title="一个简单的方法，设置系统分辨率来完成全屏的显示。   "></a>一个简单的方法，设置系统分辨率来完成全屏的显示。   </h2><blockquote>
+<p>1.程序开启自动设置Window系统分辨率,使程序全屏显示<br>2.程序退出时还原 Window系统分辨率</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/03/MFC_设置系统分辨率/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1851,7 +1878,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1897,7 +1924,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1908,7 +1935,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1919,7 +1946,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1995,7 +2022,7 @@
 -->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共10.3k字</span>
+  <span class="post-count">博客全站共6.6k字</span>
 </div>
 
         
