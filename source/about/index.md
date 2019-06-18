@@ -1,6 +1,7 @@
 ---
-title: about
+title: 个人介绍
 date: 2018-11-22 09:02:17
 comments: false
 ---
+郑诗增，男，2008年毕业于福建工程学院软件学院
 

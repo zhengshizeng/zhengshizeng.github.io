@@ -1,5 +1,5 @@
 ---
-title: vs2010 问题_LINK   fatal error LNK1123  转换到 COFF 期间失败  文件无效或损坏
+title: VS2010_问题_LINK fatal error LNK1123 转换到 COFF 期间失败 文件无效或损坏
 date: 2018-12-03 06:26:39
 tags: [VisualStudio]
 categories: "error"

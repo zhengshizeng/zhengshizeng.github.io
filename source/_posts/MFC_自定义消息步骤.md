@@ -1,5 +1,5 @@
 ---
-title: VC/MFC自定义消息步骤
+title: MFC_自定义消息步骤
 date: 2018-11-23 10:07:33
 tags: [C++,MFC] 
 categories: "MFC"
