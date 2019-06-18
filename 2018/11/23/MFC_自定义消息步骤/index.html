@@ -89,12 +89,12 @@
 <meta property="og:site_name" content="学习笔记">
 <meta property="og:description" content="VC MFC自定义消息步骤 何谓消息、消息处理函数、消息映射？消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。  按照类型，Windows将消息分为：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/VC-MFC自定义消息步骤/pic.png">
-<meta property="og:updated_time" content="2019-06-17T09:13:50.143Z">
+<meta property="og:image" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/MFC_自定义消息步骤/pic.png">
+<meta property="og:updated_time" content="2019-06-18T07:17:05.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MFC_自定义消息步骤">
 <meta name="twitter:description" content="VC MFC自定义消息步骤 何谓消息、消息处理函数、消息映射？消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。  按照类型，Windows将消息分为：">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/VC-MFC自定义消息步骤/pic.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/23/MFC_自定义消息步骤/MFC_自定义消息步骤/pic.png">
 
 
 
@@ -384,7 +384,7 @@
         <h3 id="VC-MFC自定义消息步骤"><a href="#VC-MFC自定义消息步骤" class="headerlink" title="VC MFC自定义消息步骤"></a>VC MFC自定义消息步骤</h3><blockquote>
 <p>何谓消息、消息处理函数、消息映射？<br>消息简单的说就是指通过输入设备向程序发出指令要执行某个操作。具体的某个操作是你的一系列代码。称为消息处理函数。</p>
 </blockquote>
-<h5 id="按照类型，Windows将消息分为："><a href="#按照类型，Windows将消息分为：" class="headerlink" title="按照类型，Windows将消息分为："></a>按照类型，Windows将消息分为：</h5><p><img src="VC-MFC自定义消息步骤/pic.png" alt="图片测试"><br><a id="more"></a><br>graph LR<br>消息类型–&gt;系统定义消息<br>消息类型–&gt;程序定义消息<br>系统定义消息–&gt;窗口消息<br>系统定义消息–&gt;命令消息<br>系统定义消息–&gt;控件消息<br>程序定义消息–&gt;WM_USER<br>窗口消息–&gt;WM_CREATE/WM_MOUSEMOVE等<br>命令消息–&gt;WM_COMMAND<br>控件消息–&gt;WM_COMMAND/WM_NOTIFY</p>
+<h5 id="按照类型，Windows将消息分为："><a href="#按照类型，Windows将消息分为：" class="headerlink" title="按照类型，Windows将消息分为："></a>按照类型，Windows将消息分为：</h5><p><img src="MFC_自定义消息步骤/pic.png" alt="图片测试"><br><a id="more"></a><br>graph LR<br>消息类型–&gt;系统定义消息<br>消息类型–&gt;程序定义消息<br>系统定义消息–&gt;窗口消息<br>系统定义消息–&gt;命令消息<br>系统定义消息–&gt;控件消息<br>程序定义消息–&gt;WM_USER<br>窗口消息–&gt;WM_CREATE/WM_MOUSEMOVE等<br>命令消息–&gt;WM_COMMAND<br>控件消息–&gt;WM_COMMAND/WM_NOTIFY</p>
 <h5 id="1-头文件加"><a href="#1-头文件加" class="headerlink" title="1. 头文件加"></a>1. 头文件加</h5><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">afx_msg LRESULT OnMyMsg(<span class="keyword">WPARAM</span> <span class="keyword">wParam</span>,<span class="keyword">LPARAM</span> <span class="keyword">lParam</span>)<span class="comment">;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WM_MY_MSG WM_USER+<span class="number">100</span></span></span><br></pre></td></tr></table></figure>
 <h5 id="2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加"><a href="#2-BEGIN-MESSAGE-MAP-和END-MESSAGE-MAP-之中加" class="headerlink" title="2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加"></a>2. BEGIN_MESSAGE_MAP 和END_MESSAGE_MAP 之中加</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ON_MESSAGE</span><span class="params">(WM_MY_MSG,OnMyMsg)</span></span></span><br></pre></td></tr></table></figure>
 <h5 id="3-CPP文件实现"><a href="#3-CPP文件实现" class="headerlink" title="3. CPP文件实现"></a>3. CPP文件实现</h5><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LRESULT CMy10Thread_CreateDlg::OnMyMsg(<span class="keyword">WPARAM</span> <span class="keyword">wParam</span>, <span class="keyword">LPARAM</span> <span class="keyword">lParam</span>)</span><br></pre></td></tr></table></figure>
@@ -483,7 +483,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/25/Git安装和简单使用/" rel="prev" title="Git安装和简单使用">
+              <a href="/2018/11/25/Git_安装和简单使用/" rel="prev" title="Git安装和简单使用">
                 Git安装和简单使用 <i class="fa fa-chevron-right"></i>
               </a>
             

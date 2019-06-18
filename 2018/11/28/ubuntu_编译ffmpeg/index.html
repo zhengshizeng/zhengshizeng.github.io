@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="C++,MFC,">
+  <meta name="keywords" content="ubuntu,make,ffmpeg,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="在我们写的程序当中,总有一些配置信息需要保存下来,以便完成程序的功能,最简单的办法就是将这些信息写入INI文件中,程序初始化时再读入.">
-<meta name="keywords" content="C++,MFC">
+<meta name="description" content="ffmpeg 源码编译">
+<meta name="keywords" content="ubuntu,make,ffmpeg">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置文件读写">
-<meta property="og:url" content="http://yoursite.com/2016/01/01/配置文件读写/index.html">
+<meta property="og:title" content="ubuntu编译ffmpeg">
+<meta property="og:url" content="http://yoursite.com/2018/11/28/ubuntu_编译ffmpeg/index.html">
 <meta property="og:site_name" content="学习笔记">
-<meta property="og:description" content="在我们写的程序当中,总有一些配置信息需要保存下来,以便完成程序的功能,最简单的办法就是将这些信息写入INI文件中,程序初始化时再读入.">
+<meta property="og:description" content="ffmpeg 源码编译">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-14T08:05:18.606Z">
+<meta property="og:updated_time" content="2019-06-18T07:13:43.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置文件读写">
-<meta name="twitter:description" content="在我们写的程序当中,总有一些配置信息需要保存下来,以便完成程序的功能,最简单的办法就是将这些信息写入INI文件中,程序初始化时再读入.">
+<meta name="twitter:title" content="ubuntu编译ffmpeg">
+<meta name="twitter:description" content="ffmpeg 源码编译">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/01/01/配置文件读写/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/28/ubuntu_编译ffmpeg/">
 
 
 
 
 
-  <title>配置文件读写 | 学习笔记</title>
+  <title>ubuntu编译ffmpeg | 学习笔记</title>
   
 
 
@@ -280,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/01/配置文件读写/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/28/ubuntu_编译ffmpeg/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="郑诗增">
@@ -297,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">配置文件读写</h1>
+          <h1 class="post-title" itemprop="name headline">ubuntu编译ffmpeg</h1>
         
 
         <div class="post-meta">
@@ -309,8 +309,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-01T09:36:54+08:00">
-                2016-01-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-28T06:19:02+08:00">
+                2018-11-28
               </time>
             
 
@@ -332,8 +332,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/MFC/" itemprop="url" rel="index">
-                    <span itemprop="name">MFC</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -350,8 +350,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/01/01/配置文件读写/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/01/01/配置文件读写/" itemprop="commentCount"></span>
+                <a href="/2018/11/28/ubuntu_编译ffmpeg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/28/ubuntu_编译ffmpeg/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -380,11 +380,18 @@
 
       
         <blockquote>
-<p>在我们写的程序当中,总有一些配置信息需要保存下来,以便完成程序的功能,最简单的办法就是将这些信息写入INI文件中,程序初始化时再读入.<br><a id="more"></a><br><strong>配置文件中返回整形</strong><br>[config]<br>Num=2<br>1.中括号内文字<br>2.等号左边字符<br>3.默认值没有找到配置的情况下<br>4.配置文件名<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">uKch</span>=GetPrivateProfileInt(<span class="string">"CONFIG"</span>,<span class="string">"Num"</span>,0,<span class="string">".\\config.ini"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>ffmpeg 源码编译<br><a id="more"></a></p>
 </blockquote>
-<p><strong>配置文件获取String</strong><br>[config]<br>str=中国人<br>1.中括号内文字<br>2.等号左边字符<br>3.默认值<br>4.返回的字符串<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">GetPrivateProfileString(<span class="string">"config"</span>,<span class="string">"str"</span>,<span class="string">"1"</span>,temp.GetBuffer(<span class="name">MAX_PATH</span>),MAX_PATH,<span class="string">".\\config.ini"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>写配置文件</strong><br>[config]<br>str=中国人  </p>
-<p>1.中括号内文字<br>2.等号左边字符<br>3.写入的字符<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">::WritePrivateProfileString</span>(<span class="string">"config"</span>,<span class="string">"str"</span>,<span class="string">"中国人"</span>,<span class="string">".\\config.ini"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Ubuntu上编译安装"><a href="#Ubuntu上编译安装" class="headerlink" title="Ubuntu上编译安装"></a>Ubuntu上编译安装</h2><h4 id="1-安装yasm-不安装后面会报错：报错-yasm-nasm-包不存在或者很旧"><a href="#1-安装yasm-不安装后面会报错：报错-yasm-nasm-包不存在或者很旧" class="headerlink" title="1.安装yasm 不安装后面会报错：报错 yasm/nasm 包不存在或者很旧"></a>1.安装yasm 不安装后面会报错：报错 yasm/nasm 包不存在或者很旧</h4><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> install yasm</span><br></pre></td></tr></table></figure>
+<h4 id="2-安装第三方库-x264"><a href="#2-安装第三方库-x264" class="headerlink" title="2.安装第三方库:x264"></a>2.安装第三方库:x264</h4><p>不安装H.264第三方库使用H.264的时候会报错Cannot load libcuda.so.1<br><a href="http://download.videolan.org/pub/videolan/x264/snapshots/" target="_blank" rel="noopener">下载网址</a><br>文件名: last_stable_x264.tar.bz2<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./configure–<span class="keyword">enable</span>−shared–<span class="keyword">disable</span>−asm./configure–<span class="keyword">enable</span>−shared–<span class="keyword">disable</span>−asm <span class="built_in">make</span> </span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装ffmpeg"><a href="#安装ffmpeg" class="headerlink" title="安装ffmpeg"></a>安装ffmpeg</h3><h4 id="1-解压缩"><a href="#1-解压缩" class="headerlink" title="1.解压缩"></a>1.解压缩</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xvjf</span> <span class="selector-tag">ffmpeg-3</span><span class="selector-class">.4</span><span class="selector-class">.1</span><span class="selector-class">.tar</span><span class="selector-class">.bz2</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-配置ffmpeg"><a href="#2-配置ffmpeg" class="headerlink" title="2.配置ffmpeg"></a>2.配置ffmpeg</h4><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">./configure</span> <span class="params">--enable-shared</span> <span class="params">--enable-libx264</span> <span class="params">--enable-gpl</span> <span class="params">--prefix=tmp</span></span><br></pre></td></tr></table></figure>
+<p>–enable-shared：指定生成动态库，默认是静态库。</p>
+<h4 id="3-安装ffmpeg"><a href="#3-安装ffmpeg" class="headerlink" title="3.安装ffmpeg"></a>3.安装ffmpeg</h4><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">make</span></span><br><span class="line"><span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
+<h6 id="在tmp目录中可以看到bin-include-lib-share"><a href="#在tmp目录中可以看到bin-include-lib-share" class="headerlink" title="在tmp目录中可以看到bin include lib share"></a>在tmp目录中可以看到bin include lib share</h6><h6 id="ffmpeg正常安装后执行ffmpeg时出现如下错误："><a href="#ffmpeg正常安装后执行ffmpeg时出现如下错误：" class="headerlink" title="ffmpeg正常安装后执行ffmpeg时出现如下错误："></a>ffmpeg正常安装后执行ffmpeg时出现如下错误：</h6><p>==ffmpeg: error while loading shared libraries: libavdevice.so.53: cannot open shared object file: No such file or directory==</p>
+<h5 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h5><p>编辑 /etc/ld.so.conf 文件<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ld<span class="selector-class">.so</span><span class="selector-class">.conf</span></span><br></pre></td></tr></table></figure></p>
+<p>加入：lib 目录  然后执行<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ldconfig</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="ESM6802-板子编译"><a href="#ESM6802-板子编译" class="headerlink" title="ESM6802 板子编译"></a>ESM6802 板子编译</h5><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">./configure</span> <span class="params">--enable-cross-compile</span> <span class="params">--arch=</span><span class="string">"armv7-a"</span></span><br><span class="line"><span class="params">--enable-pic</span>      </span><br><span class="line"><span class="params">--enable-shared</span> </span><br><span class="line"><span class="params">--disable-static</span> </span><br><span class="line"><span class="params">--target-os=linux</span> </span><br><span class="line"><span class="params">--cross-prefix=</span><span class="string">"arm-emtronix-linux-gnueabi-"</span>    </span><br><span class="line"><span class="params">--sysroot=</span><span class="string">"/opt/fsl-imx-x11/4.1.15-2.0.1/sysroots/cortexa9hf-neon-emtronix-linux-gnueabi"</span></span><br><span class="line"><span class="params">--disable-asm</span> <span class="params">--extra-cflags=</span><span class="string">"-march=armv7-a -mfpu=neon -mtune=cortex-a9-mfloat-abi=hard -mcpu=cortex-a9 -fPIC"</span> </span><br><span class="line"><span class="params">--extra-ldflags=</span><span class="string">"-march=armv7-a -mfpu=neon -mtune=cortex-a9-mfloat-abi=hard -mcpu=cortex-a9 -fPIC"</span> </span><br><span class="line"><span class="params">--prefix=tmp</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -447,9 +454,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C++</a>
+            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
           
-            <a href="/tags/MFC/" rel="tag"># MFC</a>
+            <a href="/tags/make/" rel="tag"># make</a>
+          
+            <a href="/tags/ffmpeg/" rel="tag"># ffmpeg</a>
           
         </div>
       
@@ -462,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1986/04/09/HelloWord/" rel="next" title="HelloWord">
-                <i class="fa fa-chevron-left"></i> HelloWord
+              <a href="/2018/11/25/Git_安装和简单使用/" rel="next" title="Git安装和简单使用">
+                <i class="fa fa-chevron-left"></i> Git安装和简单使用
               </a>
             
           </div>
@@ -472,8 +481,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/03/重启当前程序/" rel="prev" title="重启当前程序">
-                重启当前程序 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/29/ubuntu_下nfs安装配置/" rel="prev" title="ubuntu下nfs安装配置">
+                ubuntu下nfs安装配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,8 +564,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -623,6 +641,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu上编译安装"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu上编译安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-安装yasm-不安装后面会报错：报错-yasm-nasm-包不存在或者很旧"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.安装yasm 不安装后面会报错：报错 yasm/nasm 包不存在或者很旧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-安装第三方库-x264"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.安装第三方库:x264</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ffmpeg"><span class="nav-number">1.1.</span> <span class="nav-text">安装ffmpeg</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-解压缩"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.解压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-配置ffmpeg"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.配置ffmpeg</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装ffmpeg"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.安装ffmpeg</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#在tmp目录中可以看到bin-include-lib-share"><span class="nav-number">1.1.3.0.1.</span> <span class="nav-text">在tmp目录中可以看到bin include lib share</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ffmpeg正常安装后执行ffmpeg时出现如下错误："><span class="nav-number">1.1.3.0.2.</span> <span class="nav-text">ffmpeg正常安装后执行ffmpeg时出现如下错误：</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解决办法："><span class="nav-number">1.1.3.1.</span> <span class="nav-text">解决办法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ESM6802-板子编译"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">ESM6802 板子编译</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
